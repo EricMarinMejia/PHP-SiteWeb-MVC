@@ -3,7 +3,8 @@
 /**
  * Connexion vers la BDD.
  */
-function getBdd() {
+function getBdd()
+{
     $bdd = new PDO('mysql:host=localhost;dbname=reparations_automobiles_v0_0_1;charset=utf8', 'root', 'mysql', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     return $bdd;
 }
@@ -12,7 +13,8 @@ function getBdd() {
 /**
  * Renvoie toutes les réparations.
  */
-function getReparations() {
+function getReparations()
+{
     $bdd = getBdd();
     $reparations = $bdd->query('select * from reparations' . ' order by date_reparation_debut desc, ID desc');
     return $reparations;
@@ -22,7 +24,8 @@ function getReparations() {
 /**
  * Renvoie une réparation spécifique
  */
-function getReparation($id) {
+function getReparation($id)
+{
     $bdd = getBdd();
     $reparation = $bdd->prepare('select * from reparations'
                 . ' where ID=?');
@@ -39,7 +42,8 @@ function getReparation($id) {
 /**
  * Renvoie tous les véhicules
  */
-function getVehicules() {
+function getVehicules()
+{
     $bdd = getBdd();
     $vehicules = $bdd->query('select * from vehicules' . ' order by id desc');
     return $vehicules;
@@ -49,7 +53,8 @@ function getVehicules() {
 /**
  * Renvoie un véhicule spécifique
  */
-function getVehicule($id) {
+function getVehicule($id)
+{
     $bdd = getBdd();
     $vehicule = $bdd->prepare('select * from vehicules'
             . ' where id = ?');
@@ -66,7 +71,8 @@ function getVehicule($id) {
 /**
  * Renvoie tous les utilisateurs
  */
-function getUtilisateurs() {
+function getUtilisateurs()
+{
     $bdd = getBdd();
     $utilisateurs = $bdd->query('select * from utilisateurs' . ' order by nom asc, prenom asc, id desc');
     return $utilisateurs;
@@ -76,7 +82,8 @@ function getUtilisateurs() {
 /**
  * Renvoie un utilisateur véhicule
  */
-function getUtilisateur($id) {
+function getUtilisateur($id)
+{
     $bdd = getBdd();
     $utilisateur = $bdd->prepare('select * from utilisateurs'
             . ' where id = ?');
@@ -95,7 +102,8 @@ function getUtilisateur($id) {
 /**
  * Renvoie les vehicules d'un utilisateur
  */
-function getVehiculesUtilisateur($id) {
+function getVehiculesUtilisateur($id)
+{
     $bdd = getBdd();
     $vehicules = $bdd->prepare('select * from vehicules'
             . ' where id_utilisateur = ?');
@@ -113,7 +121,8 @@ function getVehiculesUtilisateur($id) {
 /**
  * Renvoie les réparations d'un véhicule
  */
-function getReparationsVehicule($id) {
+function getReparationsVehicule($id)
+{
     $bdd = getBdd();
     $reparations = $bdd->prepare('select * from reparations'
             . ' where id_vehicule = ?');
@@ -130,9 +139,24 @@ function getReparationsVehicule($id) {
 /**
  * Post une réparation
  */
-function setReparation($reparation) {
+function setReparation($reparation)
+{
     $bdd = getBdd();
     $reparations = $bdd->prepare('INSERT INTO reparations (id_vehicule, date_reparation_debut, date_reparation_fin, description_reparations, montant_paye, mechanicien) VALUES(?, ?, ?, ?, ?, ?)');
     $reparations->execute(array($reparation['id_vehicule'], $reparation['date_reparation_debut'], $reparation['date_reparation_fin'], $reparation['description_reparations'], $reparation['montant_paye'], $reparation['mechanicien']));
     return $reparations;
+}
+
+
+//FONCTIONS DELETE
+/**
+ * Supprime une réparation
+ */
+function deleteReparation($id)
+{
+    $bdd = getBdd();
+    $result = $bdd->prepare('DELETE FROM reparations'
+            . ' WHERE id=?');
+    $result->execute(array($id));
+    return $result;
 }

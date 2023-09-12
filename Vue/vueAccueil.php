@@ -32,6 +32,13 @@
                         <time><?= $reparation['date_reparation_debut'] ?></time> - <time><?= $reparation['date_reparation_fin'] ?></time>
                 <header>
             </article>
+            
+            <p>
+                <a href="index.php?action=confirmerReparation&id=<?= $reparation['id'] ?>" >
+                    [Supprimer]
+                </a>
+            </p>
+
             <hr id="hrArticles"/>
         <?php endforeach; ?>
     </div>

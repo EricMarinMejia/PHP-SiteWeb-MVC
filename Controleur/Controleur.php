@@ -24,6 +24,28 @@ function reparation($idReparation)
 
 
 /**
+ * Fonction pour supprimer une réparation
+ */
+function supprimerReparation($id)
+{
+    $reparation = getReparation($id);
+    deleteReparation($id);
+    header('Location: ./index.php');
+}
+
+
+/**
+ * Fonction qui confirme la suppression d'une réparation
+ */
+function confirmerReparation($id)
+{
+    $reparation = getReparation($id);
+    require './Vue/vueConfirmerReparation.php';
+}
+
+
+
+/**
  * Fonctions pour les véhicules
  */
 function vehicules()

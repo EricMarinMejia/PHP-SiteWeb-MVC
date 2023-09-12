@@ -55,6 +55,46 @@ try {
                 throw new Exception("Aucun identifiant de véhicule");
             }
         }
+        else if ($_GET['action'] == 'confirmerReparation')
+        {
+            if (isset($_GET['id']))
+            {
+                // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                $id = intval($_GET['id']);
+                if ($id != 0)
+                {
+                    confirmerReparation($id);
+                }
+                else
+                {
+                    throw new Exception("Identifiant de réparation incorrect");
+                }
+            }
+            else
+            {
+                throw new Exception("Aucun identifiant de réparation");
+            }
+        }
+        else if ($_GET['action'] == 'supprimerReparation')
+        {
+            if (isset($_POST['id']))
+            {
+                // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                $id = intval($_POST['id']);
+                if ($id != 0)
+                {
+                    supprimerReparation($id);
+                }
+                else
+                {
+                    throw new Exception("Identifiant de réparation incorrect");
+                }
+            }
+            else
+            {
+                throw new Exception("Aucun identifiant de réparation");
+            }
+        }
         else if ($_GET['action'] == 'vehicules')
         {
             vehicules();
@@ -114,8 +154,7 @@ try {
     {
         accueil();
     }
-
-
+    
 } catch (Exception $e) {
     $msgErreur = $e->getMessage();
     erreur($msgErreur);
