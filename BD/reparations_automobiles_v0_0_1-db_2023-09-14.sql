@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 11 sep. 2023 à 23:03
+-- Généré le : jeu. 14 sep. 2023 à 22:24
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.2.0
 
@@ -46,8 +46,7 @@ INSERT INTO `reparations` (`id`, `id_vehicule`, `date_reparation_debut`, `date_r
 (2, 2, '2023-08-01', '2023-08-01', 'Changement d\'huile', 60, 'Jean Desjardins'),
 (3, 3, '2023-08-04', '2023-08-05', 'Remplacement de pare-brise', 300, 'Michel Alvaro'),
 (4, 3, '2023-09-01', '2023-09-03', 'Réparation complète de valise arrière', 6000, 'Danny Tremblay'),
-(5, 2, '2023-09-06', '2023-09-06', 'Changement de bumper avant', 500, 'Hugo Titeau'),
-(6, 4, '2023-09-11', '2023-09-12', 'Remplacement de pneu', 75, 'Hugo Titeau');
+(7, 9, '2023-09-14', '2023-09-14', 'Remplacement de vitre côté passager', 100, 'Danny Tremblay');
 
 -- --------------------------------------------------------
 
@@ -70,9 +69,10 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `adresse`, `age`, `telephone`, `courriel`) VALUES
-(1, 'Darwin', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlesdarwin26@gmail.com'),
-(2, 'LeGrand', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonlegrand12@hotmail.com'),
-(4, 'DesFeuilles', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentindesfeuilles33@yahoo.com');
+(1, 'Benca', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlesbenca26@gmail.com'),
+(2, 'Myre', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonmyre12@hotmail.com'),
+(4, 'Toupet', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentintoupet33@yahoo.com'),
+(6, 'Joola', 'Antonii', '1265 rue Vidéo', 65, '450-430-8754', 'antoniijoola@unsafemails.com');
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,9 @@ INSERT INTO `vehicules` (`id`, `id_utilisateur`, `marque`, `modele`, `plaque`, `
 (1, 1, 'Toyota', 'Tercel SR5 1980', '755 WYC', 80000),
 (2, 2, 'Hyundai', 'Tiburon 2004', '896 JKL', 45000),
 (3, 4, 'Ford', 'Focus SE 2012', '451 HBC', 19000),
-(4, 1, 'Mazda', 'Modèle 3 2005', '553 HYT', 96000);
+(4, 1, 'Mazda', 'Modèle 3 2005', '553 HYT', 96000),
+(6, 6, 'Mercedes', 'GL 450 2012', '741 AHG', 60000),
+(9, 6, 'Mazda', 'GX 5 2019', '568 HHH', 23000);
 
 --
 -- Index pour les tables déchargées
@@ -131,19 +133,19 @@ ALTER TABLE `vehicules`
 -- AUTO_INCREMENT pour la table `reparations`
 --
 ALTER TABLE `reparations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `vehicules`
 --
 ALTER TABLE `vehicules`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
