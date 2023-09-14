@@ -21,7 +21,7 @@
 <h2 id="titreUtilisateurVehicule">Voir les véhicules de cet utilisateur</h2>
     <ul>
         <?php foreach($vehicules as $vehicule): ?>
-            <a href="<?= "vehicule.php?id=" . $vehicule['id'] ?>"><li>#<?= $vehicule['id'] ?>: <?= $vehicule['marque'] ?> <?= $vehicule['modele'] ?></li></a>
+            <a href="<?= "index.php?action=vehicule&id=" . $vehicule['id'] ?>"><li>#<?= $vehicule['id'] ?>: <?= $vehicule['marque'] ?> <?= $vehicule['modele'] ?></li></a>
         <?php endforeach ?>
     </ul>
 <?php $contenu = ob_get_clean(); ?>

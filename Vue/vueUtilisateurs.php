@@ -10,7 +10,7 @@
             ?>
             <article class="articleVueGenerale">
                 <header>
-                    <a href="<?= "utilisateur.php?id=" . $utilisateur['id'] ?>">
+                    <a href="<?= "index.php?action=utilisateur&id=" . $utilisateur['id'] ?>">
                         <h1 class="titreUtilisateur">Utilisateur #<?= $utilisateur["id"]  ?>: <?= $utilisateur['nom'] ?>, <?= $utilisateur['prenom'] ?></h1>
                     </a>
                         <h3><?= $utilisateur['telephone'] ?></h3>

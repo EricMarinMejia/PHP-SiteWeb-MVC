@@ -2,7 +2,7 @@
 <!-- CE FICHIER JOUE LE RÔLE DE vueReparations.php -->
 <?php ob_start(); ?>
 
-<form action="nouvelleReparation.php" method="post">
+<form action="index.php?action=nouvelleReparation" method="post">
     <h2>Ajouter une réparation</h2>
         <p>
             <label for="id_vehicule">Id du véhicule</label> : <input class="formInput" type="number" min=0 name="id_vehicule" /><br />
@@ -25,13 +25,20 @@
             ?>
             <article class="articleVueGenerale">
                 <header>
-                    <a href="<?= "reparation.php?id=" . $reparation['id'] ?>">
+                    <a href="<?= "index.php?action=reparation&id=" . $reparation['id'] ?>">
                         <h1 class="titreReparation">Réparation #<?= $reparation["id"]  ?></h1>
                     </a>
                         <h3><?= $reparation['description_reparations'] ?></h3>
                         <time><?= $reparation['date_reparation_debut'] ?></time> - <time><?= $reparation['date_reparation_fin'] ?></time>
                 <header>
             </article>
+            
+            <p>
+                <a href="index.php?action=confirmerReparation&id=<?= $reparation['id'] ?>" >
+                    [Supprimer]
+                </a>
+            </p>
+
             <hr id="hrArticles"/>
         <?php endforeach; ?>
     </div>

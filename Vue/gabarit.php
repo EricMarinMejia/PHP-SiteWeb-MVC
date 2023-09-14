@@ -3,14 +3,14 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="./Contenu/mystyle.css" />
         <title id="titrePage"><?= $titre ?></title>   <!-- Élément spécifique -->
     </head>
     <body>
         <div class="topnav">
-            <a href="index.php">Réparations</a>
-            <a href="indexVehicules.php">Véhicules</a>
-            <a href="indexUtilisateurs.php">Utilisateurs</a>  
+            <a href="./index.php?">Réparations</a>
+            <a href="./index.php?action=vehicules">Véhicules</a>
+            <a href="./index.php?action=utilisateurs">Utilisateurs</a>  
         </div>
                 
         <div id="global">
