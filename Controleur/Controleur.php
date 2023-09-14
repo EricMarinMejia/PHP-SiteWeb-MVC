@@ -103,5 +103,15 @@ function erreur($msgErreur)
 function nouvelleReparation($reparation)
 {
     setReparation($reparation);
-    header('Location: ./index.php?');
+    header('Location: ./index.php');
+}
+
+
+/**
+ * Fonction pour un nouveau véhicule
+ */
+function nouveauVehicule($vehicule)
+{
+    setVehicule($vehicule);
+    header('Location: ./index.php?action=vehicules');
 }

@@ -39,8 +39,7 @@ try {
         
                     if (date("Y-m-d", $date_debut) <= date("Y-m-d", $date_fin))
                     {
-                        setReparation($reparation);
-                        header('Location: ./index.php');
+                        nouvelleReparation($reparation);
                     }
                     else
                     {
@@ -119,6 +118,24 @@ try {
             {
                 throw new Exception("Aucun identifiant de véhicule fourni.");
             }    
+        }
+        else if ($_GET['action'] == 'nouveauVehicule')
+        {
+            if (isset($_POST['id_utilisateur']))
+            {
+                $id = intval($_POST['id_utilisateur']);
+                if ($id != 0)
+                {
+                    $vehicule = $_POST;
+                    nouveauVehicule($vehicule);
+                }
+                else
+                {
+                    throw new Exception("Identifiant de l'utilisateur incorrect");
+                }
+            } else {
+                throw new Exception("Aucun identifiant de utilisateur");
+            }
         }
         else if ($_GET['action'] == 'utilisateurs')
         {

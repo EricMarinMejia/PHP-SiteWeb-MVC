@@ -148,6 +148,18 @@ function setReparation($reparation)
 }
 
 
+/**
+ * Post un véhicule
+ */
+function setVehicule($vehicule)
+{
+    $bdd = getBdd();
+    $vehicules = $bdd->prepare('INSERT INTO vehicules (id_utilisateur, marque, modele, plaque, kilometrage) VALUES(?, ?, ?, ?, ?)');
+    $vehicules->execute(array($vehicule['id_utilisateur'], $vehicule['marque'], $vehicule['modele'], $vehicule['plaque'], $vehicule['kilometrage']));
+    return $vehicules;
+}
+
+
 //FONCTIONS DELETE
 /**
  * Supprime une réparation

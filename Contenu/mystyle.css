@@ -19,7 +19,7 @@ body {
   }
 
   #global a:hover {
-    color: #18f000;
+    color: #8fce00;
   }
 
 
@@ -33,8 +33,6 @@ body {
 
 .containerVueGenerale {
   border: 2px solid black;
-  /*display: flex;
-  flex-direction: column;*/
   width: 75%;
 }
 
@@ -67,12 +65,61 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #18f000;
+  background-color: #8fce00;
   color: black;
 }
 
 .topnav a.active {
-  background-color: #18f000;
+  background-color: #8fce00;
   color: white;
+}
+
+
+/*SECTION POUR SUPPRIMER*/
+.cardDiv {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  background-color: #cccccc;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.formCard {
+  width: 25%;
+  float: left;
+}
+
+.boutonOui {
+  background-color: #8fce00;
+  font-size: large;
+  margin: 5px;
+}
+
+.boutonOui:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+
+.boutonAnnuler {
+  background-color: #f44336;
+  font-size: large;
+  margin: 5px;
+}
+
+.boutonAnnuler:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
 }
 
