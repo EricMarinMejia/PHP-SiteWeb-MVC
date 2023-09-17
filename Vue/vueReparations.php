@@ -1,6 +1,5 @@
-<?php $titre = 'Système de gestion de réparations automobiles'; ?>
+<?php $this->titre = 'Système de gestion de réparations automobiles'; ?>
 <!-- CE FICHIER JOUE LE RÔLE DE vueReparations.php -->
-<?php ob_start(); ?>
 
 <form action="index.php?action=nouvelleReparation" method="post">
     <h2>Ajouter une réparation</h2>
@@ -11,7 +10,6 @@
             <label for="description_reparations">Description</label> :  <textarea class="formInput" type="text" name="description_reparations"></textarea><br />
             <label for="montant_paye">Montant payé ($)</label> : <input class="formInput" type="number" min=0 name="montant_paye" /><br />
             <label for="mechanicien">Méchanicien</label> : <input class="formInput" type="text" name="mechanicien" /><br />
-            <!-- <input type="hidden" name="article_id" value="<= $article['id'] ?>" /><br /> -->
             <input type="submit" value="Envoyer" />
         </p>
 </form>
@@ -37,6 +35,9 @@
                 <a href="index.php?action=confirmerReparation&id=<?= $reparation['id'] ?>" >
                     [Supprimer]
                 </a>
+                <a href="index.php?action=modifierReparation&id=<?= $reparation['id'] ?>" >
+                    [Modifier]
+                </a>
             </p>
 
             <hr id="hrArticles"/>
@@ -46,7 +47,5 @@
     <section></section>
 
 </div>
-<?php $contenu = ob_get_clean(); ?>
 
-<?php require 'gabarit.php'; ?>
 

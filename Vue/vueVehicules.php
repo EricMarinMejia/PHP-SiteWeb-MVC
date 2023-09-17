@@ -1,6 +1,4 @@
-<?php $titre = 'Système de gestion de réparations automobiles'; ?>
-
-<?php ob_start(); ?>
+<?php $this->titre = 'Système de gestion de réparations automobiles'; ?>
 
 <form action="index.php?action=nouveauVehicule" method="post">
     <h2>Ajouter un véhicule</h2>
@@ -51,6 +49,3 @@
     <section></section>
 
 </div>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'gabarit.php'; ?>

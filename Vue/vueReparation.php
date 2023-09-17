@@ -1,6 +1,5 @@
-<?php $titre = "Réparation automobile #" . $reparation['id']; ?>
+<?php $this->titre = "Réparation automobile #" . $reparation['id']; ?>
 
-<?php ob_start(); ?>
 <!-- Section pour les info de la réparation -->
 <article>
     <header>
@@ -18,6 +17,4 @@
 <!-- Section pour l'info du véhicule liée à la réparation -->
 <a href="<?= "index.php?action=vehicule&id=" . $vehicule['id'] ?>"><h2 id="titreVehiculeReparation">Voir le vehicule #<?= $vehicule['id'] ?></h2></a>
 
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'gabarit.php'; ?>
 

@@ -1,6 +1,9 @@
 <?php
-require './Controleur/Controleur.php';
-try {
+require './Controleur/Routeur.php';
+
+$routeur = new Routeur();
+$routeur->routerRequete();
+/*try {
 
     if (isset($_GET['action']))
     {
@@ -175,4 +178,4 @@ try {
 } catch (Exception $e) {
     $msgErreur = $e->getMessage();
     erreur($msgErreur);
-}
+}*/

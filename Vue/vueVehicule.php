@@ -1,6 +1,5 @@
-<?php $titre = "Vehicule automobile #" . $vehicule['id']; ?>
+<?php $this->titre = "Vehicule automobile #" . $vehicule['id']; ?>
 
-<?php ob_start(); ?>
 <!-- Section pour les info de la réparation -->
 <article>
     <header>
@@ -25,6 +24,3 @@
             <a href="<?= "index.php?action=reparation&id=" . $reparation['id'] ?>"><li>#<?= $reparation['id'] ?>: <?= $reparation['date_reparation_debut'] ?> -  <?= $reparation['date_reparation_fin'] ?></li></a>
         <?php endforeach ?>
     </ul>
-
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'gabarit.php'; ?>

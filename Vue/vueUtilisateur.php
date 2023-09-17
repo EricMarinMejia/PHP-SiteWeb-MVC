@@ -1,6 +1,5 @@
-<?php $titre = "Profil utilisateur #" . $utilisateur['id']; ?>
+<?php $this->titre = "Profil utilisateur #" . $utilisateur['id']; ?>
 
-<?php ob_start(); ?>
 <!-- Section pour les info de la réparation -->
 <article>
     <header>
@@ -24,5 +23,3 @@
             <a href="<?= "index.php?action=vehicule&id=" . $vehicule['id'] ?>"><li>#<?= $vehicule['id'] ?>: <?= $vehicule['marque'] ?> <?= $vehicule['modele'] ?></li></a>
         <?php endforeach ?>
     </ul>
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'gabarit.php'; ?>

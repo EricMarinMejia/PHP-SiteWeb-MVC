@@ -1,5 +1,5 @@
-<?php $titre = "Supprimer - " . $reparation['id']; ?>
-<?php ob_start(); ?>
+<?php $this->titre = "Supprimer - " . $reparation['id']; ?>
+
 <div class="cardContainer">
     <div class="cardDiv">
         <header>
@@ -21,6 +21,3 @@
         </div>
     </div>
 </div>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'Vue/gabarit.php'; ?>

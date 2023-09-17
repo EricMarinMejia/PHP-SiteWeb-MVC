@@ -1,6 +1,5 @@
-<?php $titre = 'Système de gestion de réparations automobiles'; ?>
+<?php $this->titre = 'Système de gestion de réparations automobiles'; ?>
 
-<?php ob_start(); ?>
 <div class="divCentralCategories">
 
     <section></section>
@@ -23,6 +22,3 @@
     <section></section>
 
 </div>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'gabarit.php'; ?>

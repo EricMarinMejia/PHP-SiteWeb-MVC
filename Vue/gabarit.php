@@ -10,7 +10,9 @@
         <div class="topnav">
             <a href="./index.php?">Réparations</a>
             <a href="./index.php?action=vehicules">Véhicules</a>
-            <a href="./index.php?action=utilisateurs">Utilisateurs</a>  
+            <a href="./index.php?action=utilisateurs">Utilisateurs</a>
+            <a href="tests.php">->TEST<-</a>
+            <a href="index.php?action=apropos">À propos</a>
         </div>
                 
         <div id="global">
