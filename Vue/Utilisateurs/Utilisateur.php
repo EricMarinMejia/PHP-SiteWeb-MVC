@@ -13,6 +13,7 @@
     <p><strong>Âge: </strong><?= $this->nettoyer($utilisateur['age']) ?></p>
     <p><strong>Téléphone: </strong><?= $this->nettoyer($utilisateur['telephone']) ?></p>
     <p><strong>Courriel: </strong><?= $this->nettoyer($utilisateur['courriel']) ?></p>
+    <p><strong>Administrateur? </strong><?= $this->nettoyer($utilisateur['admin']) == 1 ? "Oui" : "Non" ?></p>
 </article>
 
 <!-- Section pour les véhicules liée à la cet utilisateur -->

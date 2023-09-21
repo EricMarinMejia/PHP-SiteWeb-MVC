@@ -57,4 +57,13 @@ class Vehicule extends Modele
         $vehicules = $this->executerRequete($sql, array($vehicule['id_utilisateur'], $vehicule['marque'], $vehicule['modele'], $vehicule['plaque'], $vehicule['kilometrage']));
         return $vehicules;
     }
+
+
+    public function getNombreVehicules()
+    {
+        $sql = 'select count(*) as nbVehicules from vehicules';
+        $result = $this->executerRequete($sql);
+        $ligne = $resultat->fetch();
+        return $ligne['nbVehicules'];
+    }
 }

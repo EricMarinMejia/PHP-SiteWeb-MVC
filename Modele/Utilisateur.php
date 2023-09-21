@@ -48,4 +48,40 @@ class Utilisateur extends Modele
             throw new Exception("Aucun vehicule ne correspond à l'identifiant '$id'");
         }
     }
+
+
+    public function getNombreUtilisateurs()
+    {
+        $sql = 'select count(*) as nbUtilisateurs from utilisateurs';
+        $result = $this->executerRequete($sql);
+        $ligne = $resultat->fetch();
+        return $ligne['nbUtilisateurs'];
+    }
+
+
+    public function connecter($login, $mdp)
+    {
+        $sql = "select id from utilisateurs where login=? and mot_de_passe=?";
+        $utilisateur = $this->executerRequete($sql, array($login, $mdp));
+        return ($utilisateur->rowCount() == 1);
+    }
+
+
+    public function getUtilisateur($login, $mdp)
+    {
+        $sql = "select id as idUtilisateur, login as login, mot_de_passe as mdp
+        from utilisateurs where login=? and mot_de_passe=?";
+
+        $utilisateur = $this->executerRequete($sql, array($login, $mdp));
+
+        if ($utilisateur->rowCount() == 1)
+        {
+            return $utilisateur->fetch();
+        }
+        else
+        {
+            throw new Exception("Aucun utilisateur ne correspond aux identifiants fournis");
+        }
+    }
+
 }

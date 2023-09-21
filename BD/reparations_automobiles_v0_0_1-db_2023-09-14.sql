@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 14 sep. 2023 à 22:24
+-- Hôte : localhost
+-- Généré le : jeu. 21 sep. 2023 à 16:24
 -- Version du serveur : 8.0.31
--- Version de PHP : 8.2.0
+-- Version de PHP : 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,18 +61,22 @@ CREATE TABLE `utilisateurs` (
   `adresse` varchar(255) NOT NULL,
   `age` int NOT NULL,
   `telephone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `courriel` varchar(255) NOT NULL
+  `courriel` varchar(255) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
+  `admin` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `adresse`, `age`, `telephone`, `courriel`) VALUES
-(1, 'Benca', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlesbenca26@gmail.com'),
-(2, 'Myre', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonmyre12@hotmail.com'),
-(4, 'Toupet', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentintoupet33@yahoo.com'),
-(6, 'Joola', 'Antonii', '1265 rue Vidéo', 65, '450-430-8754', 'antoniijoola@unsafemails.com');
+INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `adresse`, `age`, `telephone`, `courriel`, `login`, `mot_de_passe`, `admin`) VALUES
+(1, 'Benca', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlesbenca26@gmail.com', 'charles', '1234', 0),
+(2, 'Myre', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonmyre12@hotmail.com', 'brandon', '1234', 0),
+(4, 'Toupet', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentintoupet33@yahoo.com', 'florentin', '1234', 0),
+(6, 'Joola', 'Antonii', '1265 rue Vidéo', 65, '450-430-8754', 'antoniijoola22@unsafemails.com', 'antonii', '1234', 0),
+(7, 'Gordon', 'Michaël', '123 Rue de Saturne', 20, '450-354-4158', 'michaelgordon33@yahoo.com', 'michael', '1234', 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,8 @@ INSERT INTO `vehicules` (`id`, `id_utilisateur`, `marque`, `modele`, `plaque`, `
 (3, 4, 'Ford', 'Focus SE 2012', '451 HBC', 19000),
 (4, 1, 'Mazda', 'Modèle 3 2005', '553 HYT', 96000),
 (6, 6, 'Mercedes', 'GL 450 2012', '741 AHG', 60000),
-(9, 6, 'Mazda', 'GX 5 2019', '568 HHH', 23000);
+(9, 6, 'Mazda', 'GX 5 2019', '568 HHH', 23000),
+(10, 1, 'Nissan', 'Sentra', '147 REW', 50000);
 
 --
 -- Index pour les tables déchargées
@@ -133,7 +138,7 @@ ALTER TABLE `vehicules`
 -- AUTO_INCREMENT pour la table `reparations`
 --
 ALTER TABLE `reparations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
@@ -145,7 +150,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `vehicules`
 --
 ALTER TABLE `vehicules`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées

@@ -33,4 +33,10 @@ abstract class Controleur
     $vue = new Vue($this->action, $controleur);
     $vue->generer($donneesVue);
   }
+
+  protected function rediriger($controleur, $action = null)
+  {
+    $racineWeb = Configuration::get("racineWeb", "/");
+    header("Location:" . $racineWeb . $controleur . "/" . $action);
+  }
 }

@@ -67,4 +67,13 @@ class Reparation extends Modele
         return $result;
     }
 
+
+    public function getNombreReparations()
+    {
+        $sql = 'select count(*) as nbReparations from reparations';
+        $result = $this->executerRequete($sql);
+        $ligne = $resultat->fetch();
+        return $ligne['nbReparations'];
+    }
+
 }
