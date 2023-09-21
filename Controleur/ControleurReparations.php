@@ -111,8 +111,19 @@ class ControleurReparations extends Controleur
         $reparation['description_reparations'] = $this->requete->getParametre("description_reparations");
         $reparation['montant_paye'] = $this->requete->getParametre("montant_paye");
         $reparation['mechanicien'] = $this->requete->getParametre("mechanicien");
-        $this->reparation->updateReparation($reparation);
-        $this->executerAction("index");
+
+        $date_debut = strtotime($reparation['date_reparation_debut']);
+        $date_fin = strtotime($reparation['date_reparation_fin']);
+
+        if (date("Y-m-d", $date_debut) <= date("Y-m-d", $date_fin))
+        {
+            $this->reparation->updateReparation($reparation);
+            $this->executerAction("index");
+        }
+        else
+        {
+            throw new Exception("Date de fin avant date de debut");
+        }
     }
 
 }

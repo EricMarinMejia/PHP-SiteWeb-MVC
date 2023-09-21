@@ -4,10 +4,10 @@
     <div class="cardDiv">
         <header>
             <p>
-                <h1>Supprimer l'entrée de réparation #<?= $reparation['id'] ?>?</h1>
-                <strong><?= $reparation['description_reparations'] ?></strong><br/>
-                <?= $reparation['date_reparation_debut'] ?> - <?= $reparation['date_reparation_fin'] ?><br/>
-                Pour le véhicule: #<?= $reparation['id_vehicule'] ?>
+                <h1>Supprimer l'entrée de réparation #<?= $this->nettoyer($reparation['id']) ?>?</h1>
+                <strong><?= $this->nettoyer($reparation['description_reparations']) ?></strong><br/>
+                <?= $this->nettoyer($reparation['date_reparation_debut']) ?> - <?= $this->nettoyer($reparation['date_reparation_fin']) ?><br/>
+                Pour le véhicule: #<?= $this->nettoyer($reparation['id_vehicule']) ?>
             </p>
         </header>
         <div class="cardButtonContainer">

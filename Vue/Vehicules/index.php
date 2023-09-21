@@ -22,7 +22,6 @@
             <label for="modele">Modele</label> : <input class="formInput" type="text" name="modele" /><br />
             <label for="plaque">Plaque (Format 123 AAA)</label> : <input class="formInput" type="text" name="plaque" maxlength="7"/><br />
             <label for="kilometrage">Kilometrage</label> : <input class="formInput" type="number" min=0 name="kilometrage" /><br />
-            <!-- <input type="hidden" name="article_id" value="<= $article['id'] ?>" /><br /> -->
             <input type="submit" value="Envoyer" />
         </p>
 </form>
@@ -37,9 +36,9 @@
             <article class="articleVueGenerale">
                 <header>
                     <a href="Vehicules/vehicule/<?= $vehicule['id'] ?>">
-                        <h1 class="titreVehicule">Vehicule #<?= $vehicule["id"]  ?>: <?= $vehicule['plaque'] ?></h1>
+                        <h1 class="titreVehicule">Vehicule #<?= $this->nettoyer($vehicule["id"])  ?>: <?= $this->nettoyer($vehicule['plaque']) ?></h1>
                     </a>
-                        <h3><?= $vehicule['marque'] ?> <?= $vehicule['modele'] ?></h3>
+                        <h3><?= $this->nettoyer($vehicule['marque']) ?> <?= $this->nettoyer($vehicule['modele']) ?></h3>
                 <header>
             </article>
             <hr id="hrArticles"/>

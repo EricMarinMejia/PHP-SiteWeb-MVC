@@ -23,19 +23,19 @@
             ?>
             <article class="articleVueGenerale">
                 <header>
-                    <a href="<?= "index.php?action=reparation&id=" . $reparation['id'] ?>">
-                        <h1 class="titreReparation">Réparation #<?= $reparation["id"]  ?></h1>
+                    <a href="Reparations/reparation/<?= $reparation['id'] ?>">
+                        <h1 class="titreReparation">Réparation #<?= $this->nettoyer($reparation["id"]) ?></h1>
                     </a>
-                        <h3><?= $reparation['description_reparations'] ?></h3>
-                        <time><?= $reparation['date_reparation_debut'] ?></time> - <time><?= $reparation['date_reparation_fin'] ?></time>
+                        <h3><?= $this->nettoyer($reparation['description_reparations']) ?></h3>
+                        <time><?= $this->nettoyer($reparation['date_reparation_debut']) ?></time> - <time><?= $this->nettoyer($reparation['date_reparation_fin']) ?></time>
                 <header>
             </article>
             
             <p>
-                <a href="index.php?action=confirmerReparation&id=<?= $reparation['id'] ?>" >
+                <a href="Reparations/confirmerReparation/<?= $reparation['id'] ?>" >
                     [Supprimer]
                 </a>
-                <a href="index.php?action=modifierReparation&id=<?= $reparation['id'] ?>" >
+                <a href="Reparations/modifierReparation/<?= $reparation['id'] ?>" >
                     [Modifier]
                 </a>
             </p>

@@ -7,12 +7,12 @@
         <hr />
     </header>
 
-    <p><strong>ID de l'utilisateur: </strong><?= $utilisateur['id'] ?></p>
-    <p><strong>Nom complet: </strong><?= $utilisateur['prenom'] ?> <?= $utilisateur['nom'] ?></p>
-    <p><strong>Adresse: </strong><?= $utilisateur['adresse'] ?></p>
-    <p><strong>Âge: </strong><?= $utilisateur['age'] ?></p>
-    <p><strong>Téléphone: </strong><?= $utilisateur['telephone'] ?></p>
-    <p><strong>Courriel: </strong><?= $utilisateur['courriel'] ?></p>
+    <p><strong>ID de l'utilisateur: </strong><?= $this->nettoyer($utilisateur['id']) ?></p>
+    <p><strong>Nom complet: </strong><?= $this->nettoyer($utilisateur['prenom']) ?> <?= $this->nettoyer($utilisateur['nom']) ?></p>
+    <p><strong>Adresse: </strong><?= $this->nettoyer($utilisateur['adresse']) ?></p>
+    <p><strong>Âge: </strong><?= $this->nettoyer($utilisateur['age']) ?></p>
+    <p><strong>Téléphone: </strong><?= $this->nettoyer($utilisateur['telephone']) ?></p>
+    <p><strong>Courriel: </strong><?= $this->nettoyer($utilisateur['courriel']) ?></p>
 </article>
 
 <!-- Section pour les véhicules liée à la cet utilisateur -->
@@ -20,6 +20,6 @@
 <h2 id="titreUtilisateurVehicule">Voir les véhicules de cet utilisateur</h2>
     <ul>
         <?php foreach($vehicules as $vehicule): ?>
-            <a href="Vehicules/vehicule/<?= $vehicule['id'] ?>"><li>#<?= $vehicule['id'] ?>: <?= $vehicule['marque'] ?> <?= $vehicule['modele'] ?></li></a>
+            <a href="Vehicules/vehicule/<?= $vehicule['id'] ?>"><li>#<?= $this->nettoyer($vehicule['id']) ?>: <?= $this->nettoyer($vehicule['marque']) ?> <?= $this->nettoyer($vehicule['modele']) ?></li></a>
         <?php endforeach ?>
     </ul>
