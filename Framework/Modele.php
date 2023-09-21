@@ -1,21 +1,22 @@
 <?php
 
+require_once 'Configuration.php';
+
 abstract class Modele {
 
-    private $bdd;
+    private static $bdd;
 
     protected function executerRequete($sql, $params = null)
     {
         if ($params == null)
         {
-            $resultat = $this->getBdd()->query($sql);
+            $resultat = self::getBdd()->query($sql);
         }
         else
         {
-            $resultat = $this->getBdd()->prepare($sql);
+            $resultat = self::getBdd()->prepare($sql);
             $resultat->execute($params);
         }
-
         return $resultat;
     }
 
@@ -23,12 +24,15 @@ abstract class Modele {
     /**
      * Connexion vers la BDD.
      */
-    private function getBdd()
+    private static function getBdd()
     {
-        if ($this->bdd == null)
+        if (self::$bdd == null)
         {
-            $this->bdd = new PDO('mysql:host=localhost;dbname=reparations_automobiles_v0_0_1;charset=utf8',
-            'root', 'mysql', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $dsn = Configuration::get("dsn");
+            $login = Configuration::get("login");
+            $mdp = Configuration::get("mdp");
+            self::$bdd = new PDO($dsn, $login, $mdp,
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $bdd;
     }
