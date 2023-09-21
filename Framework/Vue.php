@@ -1,12 +1,19 @@
 <?php
 
-class Vue {
+class Vue
+{
     private $fichier;
     private $titre;
 
-    public function __construct($action)
+    public function __construct($action, $controleur = "")
     {
-        $this->fichier = "Vue/vue" . $action . ".php";
+        $fichier = "Vue/";
+
+        if ($controleur != "") {
+            $fichier = $fichier . $controleur . "/";
+        }
+        
+        $this->fichier = $fichier . $action . ".php";
     }
 
     public function generer($donnees = NULL)

@@ -4,7 +4,8 @@ class Configuration {
 
   private static $parametres;
 
-  public static function get($nom, $valeurParDefaut = null) {
+  public static function get($nom, $valeurParDefaut = null)
+  {
     if (isset(self::getParametres()[$nom]))
     {
       $valeur = self::getParametres()[$nom];
@@ -16,7 +17,8 @@ class Configuration {
     return $valeur;
   }
 
-  private static function getParametres() {
+  private static function getParametres()
+  {
     if (self::$parametres == null)
     {
       $cheminFichier = "Config/dev.ini";

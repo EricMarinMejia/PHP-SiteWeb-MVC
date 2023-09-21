@@ -34,6 +34,6 @@ abstract class Modele {
             self::$bdd = new PDO($dsn, $login, $mdp,
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
-        return $bdd;
+        return self::$bdd;
     }
 }
