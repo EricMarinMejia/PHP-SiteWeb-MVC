@@ -1,7 +1,7 @@
 <?php $this->titre = 'Système de gestion de réparations automobiles'; ?>
 <!-- CE FICHIER JOUE LE RÔLE DE vueReparations.php -->
 
-<form action="index.php?action=nouvelleReparation" method="post">
+<form action="Reparations/nouvelleReparation" method="post">
     <h2>Ajouter une réparation</h2>
         <p>
             <label for="id_vehicule">Id du véhicule</label> : <input class="formInput" type="number" min=0 name="id_vehicule" /><br />

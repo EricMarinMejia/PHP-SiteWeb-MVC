@@ -15,6 +15,6 @@
 </article>
 
 <!-- Section pour l'info du véhicule liée à la réparation -->
-<a href="<?= "index.php?action=vehicule&id=" . $vehicule['id'] ?>"><h2 id="titreVehiculeReparation">Voir le vehicule #<?= $vehicule['id'] ?></h2></a>
+<a href="Vehicules/vehicule/<?= $vehicule['id'] ?>"><h2 id="titreVehiculeReparation">Voir le vehicule #<?= $vehicule['id'] ?></h2></a>
 
 

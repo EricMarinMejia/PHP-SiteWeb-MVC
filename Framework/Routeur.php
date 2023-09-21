@@ -7,11 +7,6 @@ class Routeur
 {
     private $ctrReparation;
 
-    public function __construct()
-    {
-        $this->ctrReparation = new ControleurReparation();
-    }
-
     public function routerRequete()
     {
         try {
@@ -30,7 +25,8 @@ class Routeur
 
     private function creerControleur(Requete $requete)
     {
-        $controleur = "Reparations";
+        $controleurReparations = Configuration::get("defaut");
+        $controleur = $controleurReparations;
 
         if ($requete->existeParametre('controleur'))
         {

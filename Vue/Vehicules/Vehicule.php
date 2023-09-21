@@ -17,10 +17,10 @@
 
 <!-- Section pour l'info de l'utilisateur liée au véhicule -->
 <!-- tous les véhicules doivent avoir un user liée (1 min et 1 max) -->
-<a href="<?= "index.php?action=utilisateur&id=" . $utilisateur['id'] ?>"><h2 id="titreUtilisateurVehicule">Voir le profil utilisateur #<?= $utilisateur['id'] ?></h2></a>
+<a href="Utilisateurs/utilisateur/<?= $utilisateur['id'] ?>"><h2 id="titreUtilisateurVehicule">Voir le profil utilisateur #<?= $utilisateur['id'] ?></h2></a>
 <h2 id="titreReparationsVehicule">Voir les réparations de ce véhicule</h2>
     <ul>
         <?php foreach($reparations as $reparation): ?>
-            <a href="<?= "index.php?action=reparation&id=" . $reparation['id'] ?>"><li>#<?= $reparation['id'] ?>: <?= $reparation['date_reparation_debut'] ?> -  <?= $reparation['date_reparation_fin'] ?></li></a>
+            <a href="Reparations/reparation/<?= $reparation['id'] ?>"><li>#<?= $reparation['id'] ?>: <?= $reparation['date_reparation_debut'] ?> -  <?= $reparation['date_reparation_fin'] ?></li></a>
         <?php endforeach ?>
     </ul>

@@ -11,11 +11,11 @@
             </p>
         </header>
         <div class="cardButtonContainer">
-            <form class="formCard" action="index.php?action=supprimerReparation" method="post">
+            <form class="formCard" action="Reparations/supprimerReparation/<?= $reparation['id'] ?>" method="post">
                 <input type="hidden" name="id" value="<?= $reparation['id'] ?>" />
                 <input class="boutonOui" type="submit" value="Confirmer" />
             </form>
-            <form class="formCard" action="index.php" method="get" >
+            <form class="formCard" action="Reparations/" method="get" >
                 <input class="boutonAnnuler" type="submit" value="Annuler" />
             </form>
         </div>

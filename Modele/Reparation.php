@@ -63,7 +63,7 @@ class Reparation extends Modele
         $sql = 'UPDATE reparations'
             . ' SET id_vehicule = ?, date_reparation_debut = ?, date_reparation_fin = ?, description_reparations = ?, montant_paye = ?, mechanicien = ?'
             . ' WHERE id = ?';
-        $result = $this->executerRequete($sql, array($reparation['id_vehicule'], $reparation['date_reparation_debut'], $reparation['date_reparation_fin'], $reparation['description_reparations'], $reparation['montant_paye'], $reparation['mechanicien']));
+        $result = $this->executerRequete($sql, array($reparation['id_vehicule'], $reparation['date_reparation_debut'], $reparation['date_reparation_fin'], $reparation['description_reparations'], $reparation['montant_paye'], $reparation['mechanicien'], $reparation['id']));
         return $result;
     }
 

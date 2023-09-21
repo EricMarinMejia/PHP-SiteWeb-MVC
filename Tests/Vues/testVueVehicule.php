@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Vue/Vue.php';
+require_once 'Framework/Vue.php';
 $vehicules = [
     [
         'id' => '991',
@@ -19,5 +19,5 @@ $vehicules = [
         'kilometrage' => '9999'
     ]
 ];
-$vue = new Vue('Vehicules');
+$vue = new Vue('Vehicules/index');
 $vue->generer(['vehicules' => $vehicules]);

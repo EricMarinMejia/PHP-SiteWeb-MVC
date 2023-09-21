@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Vue/Vue.php';
+require_once 'Framework/Vue.php';
 $reparations = [
     [
         'id' => '991',
@@ -21,5 +21,5 @@ $reparations = [
         'mechanicien' => 'texte TEST2'
     ]
 ];
-$vue = new Vue('Reparations');
+$vue = new Vue('Reparations/index');
 $vue->generer(['reparations' => $reparations]);
