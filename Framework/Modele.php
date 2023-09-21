@@ -25,7 +25,11 @@ abstract class Modele {
      */
     private function getBdd()
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=reparations_automobiles_v0_0_1;charset=utf8', 'root', 'mysql', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        if ($this->bdd == null)
+        {
+            $this->bdd = new PDO('mysql:host=localhost;dbname=reparations_automobiles_v0_0_1;charset=utf8',
+            'root', 'mysql', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        }
         return $bdd;
     }
 }
