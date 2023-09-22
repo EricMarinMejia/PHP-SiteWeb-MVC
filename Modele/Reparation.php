@@ -72,7 +72,7 @@ class Reparation extends Modele
     {
         $sql = 'select count(*) as nbReparations from reparations';
         $result = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();
+        $ligne = $result->fetch();
         return $ligne['nbReparations'];
     }
 

@@ -26,6 +26,11 @@ class Routeur
     private function creerControleur(Requete $requete)
     {
         $controleurReparations = Configuration::get("defaut");
+
+        if ($requete->getSession()->existeAttribut("utilisateur")) {
+            $controleurReparations = 'Admin' . $controleurReparations;
+        }
+
         $controleur = $controleurReparations;
 
         if ($requete->existeParametre('controleur'))

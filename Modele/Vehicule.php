@@ -63,7 +63,7 @@ class Vehicule extends Modele
     {
         $sql = 'select count(*) as nbVehicules from vehicules';
         $result = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();
+        $ligne = $result->fetch();
         return $ligne['nbVehicules'];
     }
 }

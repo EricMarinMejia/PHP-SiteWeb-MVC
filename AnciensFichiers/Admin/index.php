@@ -5,5 +5,9 @@ Ce site contient <?= $this->nettoyer($nbReparations) ?> entrées de réparations
  <?= $this->nettoyer($nbVehicules) ?> vehicule(s) enregistrés et <?= $this->nettoyer($nbUtilisateurs) ?> utilisateurs inscrits.
 
  <br />
- <a id="lienDeco" href="Connexion/deconnecter">Se déconnecter</a>
+
+<form class="formCard" action="Connexion/deconnecter">
+    <input type="submit" value="Déconnexion" />
+</form>
+
 

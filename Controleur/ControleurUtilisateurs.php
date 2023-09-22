@@ -16,13 +16,17 @@ class ControleurUtilisateurs extends Controleur
         $this->vehicules = new Vehicule();
     }
 
-    /**
-     * Fonction pour les utilisateurs
-     */
+   
     public function index()
     {
         $utilisateurs = $this->utilisateur->getUtilisateurs();
         $this->genererVue(array('utilisateurs' => $utilisateurs));
+    }
+
+    public function login()
+    {
+        $erreur = $this->requete->getSession()->existeAttribut("erreur") ? $this->requete->getsession()->getAttribut("erreur") : '';
+        $this->genererVue(['erreur' => $erreur]);
     }
 
 
@@ -34,6 +38,44 @@ class ControleurUtilisateurs extends Controleur
         $id = $id = $this->requete->getParametre("id");
         $utilisateur = $this->utilisateur->getUtilisateur($id);
         $vehicules = $this->utilisateur->getVehiculesUtilisateur($id);
-        $this->genererVue(array('utilisateur' => $utilisateur, 'vehicules' => $vehicules)); //IL FAUDRA ENVOYER L'UTILISATEUR AUSSI
+        $this->genererVue(array('utilisateur' => $utilisateur, 'vehicules' => $vehicules));
     }
+
+    
+    public function connecter()
+    {
+        if ($this->requete->existeParametre("login") && $this->requete->existeParametre("mdp"))
+        {
+            $login = $this->requete->getParametre("login");
+            $mdp = $this->requete->getParametre("mdp");
+            
+            if ($this->utilisateur->connecter($login, $mdp))
+            {
+                $utilisateur = $this->utilisateur->getUtilisateurLogin($login, $mdp);
+                $this->requete->getSession()->setAttribut("utilisateur", $utilisateur);
+
+                if ($this->requete->getSession()->existeAttribut('erreur')) {
+                    $this->requete->getsession()->setAttribut('erreur', '');
+                }
+
+                $this->rediriger("AdminReparations");
+            }
+            else
+            {
+                $this->requete->getSession()->setAttribut('erreur', 'mdp');
+                $this->rediriger('Utilisateurs');
+            }
+        }
+        else 
+        {
+            throw new Exception("Action impossible : login ou mot de passe non défini");
+        }
+    }
+
+    /*
+    public function deconnecter()
+    {
+        $this->requete->getSession()->detruire();
+        $this->rediriger("");
+    }*/
 }

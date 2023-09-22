@@ -1,31 +1,26 @@
 <?php
-require_once 'ControleurSecurise.php';
-require_once 'Modele/Reparation.php';
-require_once 'Modele/Vehicules.php';
-require_once 'Modele/Utilisateur.php';
+require_once 'Framework/Controleur.php';
 
-class ControleurAdmin extends ControleurSecurise
+abstract class ControleurAdmin extends Controleur
 {
-    private $reparation;
-    private $vehicule;
     private $utilisateur;
- 
 
-    public function __construct()
+    public function executerAction($action)
     {
-        $this->reparation = new Reparation();
-        $this->vehicule = new Vehicule();
-        $this->utilisateur = new Utilisateur();
+        if ($this->requete->getSession()->existeAttribut("utilisateur"))
+        {
+            $this->utilisateur = $this->requete->getSession()->getAttribut("utilisateur");
+            parent::executerAction($action);
+        }
+        else
+        {
+            $this->rediriger("Utilisateurs");
+        }
     }
 
-    
-    public function index()
+    public function genererVue($donneesVue = array())
     {
-        $nbReparations = $this->reparation->getNombreReparations();
-        $nbVehicules = $this->vehicule->getNombreVehicules();
-        $nbUtilisateurs = $this->utilisateur->getNombreUtilisateurs();
-        $login = $this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('nbReparations' => $nbReparations,
-        'nbVehicules' => $nbVehicules,, 'nbUtilisateurs' => $nbUtilisateurs, 'login' => $login));
+        $donneesVue['utilisateur'] = $this->utilisateur;
+        parent::genererVue($donneesVue);
     }
 }

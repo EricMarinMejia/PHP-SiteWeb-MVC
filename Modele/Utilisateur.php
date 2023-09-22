@@ -54,7 +54,7 @@ class Utilisateur extends Modele
     {
         $sql = 'select count(*) as nbUtilisateurs from utilisateurs';
         $result = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();
+        $ligne = $result->fetch();
         return $ligne['nbUtilisateurs'];
     }
 
@@ -67,9 +67,9 @@ class Utilisateur extends Modele
     }
 
 
-    public function getUtilisateur($login, $mdp)
+    public function getUtilisateurLogin($login, $mdp)
     {
-        $sql = "select id as idUtilisateur, login as login, mot_de_passe as mdp
+        $sql = "select id, nom, prenom, adresse, age, telephone, courriel, login, mot_de_passe, admin 
         from utilisateurs where login=? and mot_de_passe=?";
 
         $utilisateur = $this->executerRequete($sql, array($login, $mdp));

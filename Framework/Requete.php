@@ -33,9 +33,14 @@ class Requete
     }
   }
 
-
   public function getSession()
   {
     return $this->session;
   }  
+
+  public function setParametre($nom, $valeur)
+  {
+    $this->parametres[$nom] = $valeur;
+  }
+
 }

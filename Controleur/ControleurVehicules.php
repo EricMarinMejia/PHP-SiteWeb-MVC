@@ -41,19 +41,4 @@ class ControleurVehicules extends Controleur
         $this->genererVue(array('vehicule' => $vehicule, 'reparations' => $reparations, 'utilisateur' => $utilisateur)); //IL FAUDRA ENVOYER L'UTILISATEUR AUSSI
     }
 
-
-    /**
-     * Fonction pour un nouveau véhicule
-     */
-    public function nouveauVehicule()
-    {
-        $vehicule['id_utilisateur'] = $this->requete->getParametre("id_utilisateur");
-        $vehicule['marque'] = $this->requete->getParametre("marque");
-        $vehicule['modele'] = $this->requete->getParametre("modele");
-        $vehicule['plaque'] = $this->requete->getParametre("plaque");
-        $vehicule['kilometrage'] = $this->requete->getParametre("kilometrage");
-
-        $this->vehicule->setVehicule($vehicule);
-        $this->executerAction("index");
-    }
 }

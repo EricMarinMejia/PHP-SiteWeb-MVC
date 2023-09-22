@@ -30,13 +30,27 @@ abstract class Controleur
   protected function genererVue($donneesVue = array()) {
     $classeControleur = get_class($this);
     $controleur = str_replace("Controleur", "", $classeControleur);
+    $message = '';
+
+    if ($this->requete->getSession()->existeAttribut("message"))
+    {
+      $message = $this->requete->getsession()->getAttribut("message");
+            $this->requete->getsession()->setAttribut("message", ''); // on affiche le message une seule fois 
+    }
+    $donneesVue['message'] = $message;
+
     $vue = new Vue($this->action, $controleur);
     $vue->generer($donneesVue);
   }
 
-  protected function rediriger($controleur, $action = null)
+  protected function rediriger($controleur = null, $action = null)
   {
     $racineWeb = Configuration::get("racineWeb", "/");
-    header("Location:" . $racineWeb . $controleur . "/" . $action);
+    
+    if ($controleur != null) {
+      header("Location:" . $racineWeb . $controleur . "/" . $action);
+    } else {
+      header("Location:" . $racineWeb);
+    }
   }
 }

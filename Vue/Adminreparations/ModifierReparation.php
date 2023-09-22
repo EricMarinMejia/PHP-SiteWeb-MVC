@@ -1,6 +1,6 @@
 <?php $this->titre = "Modifier - " . $reparation['id']; ?>
 
-<form action="Reparations/miseAJourReparation" method="post">
+<form action="Adminreparations/miseAJourReparation" method="post">
     <h2>Ajouter une réparation</h2>
         <p>
         <input type="hidden" name="id" value="<?= $reparation['id'] ?>" />

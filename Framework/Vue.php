@@ -18,15 +18,24 @@ class Vue
         $this->fichier = $fichier . $action . ".php";
     }
 
-    public function generer($donnees = NULL)
+    public function generer($donnees)
     {
         $contenu = $this->genererFichier($this->fichier, $donnees);
 
         $racineWeb = Configuration::get("racineWeb", "/");
-        
-        $vue = $this->genererFichier('Vue/gabarit.php',
-            array('titre' => $this->titre, 'contenu' => $contenu, 'racineWeb' => $racineWeb));
 
+        $donnees_gabarit = [
+            'titre' => $this->titre, 'contenu' => $contenu,
+            'racineWeb' => $racineWeb
+        ];
+        
+        if (isset($donnees['utilisateur']))
+        {
+            $donnees_gabarit['utilisateur'] = $donnees['utilisateur'];
+        }
+
+
+        $vue = $this->genererFichier('Vue/gabarit.php', $donnees_gabarit);
         echo $vue;
     }
 
@@ -34,9 +43,7 @@ class Vue
     {
         if (file_exists($fichier))
         {
-            if ($donnees != NULL) {
-                extract($donnees);
-            }
+            extract($donnees);
 
             ob_start();
             require $fichier;
