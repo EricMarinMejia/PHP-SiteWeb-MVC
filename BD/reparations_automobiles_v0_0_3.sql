@@ -75,9 +75,9 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `adresse`, `age`, `telephone`, `courriel`, `login`, `mot_de_passe`, `admin`) VALUES
-(1, 'Benca', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlesbenca26@gmail.com', 'charles', '1234', 0),
-(2, 'Myre', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonmyre12@hotmail.com', 'brandon', '1234', 0),
-(4, 'Toupet', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentintoupet33@yahoo.com', 'florentin', '1234', 0),
+(1, 'Pierre', 'Charles', '5830 Rue de Parme', 22, '450-478-5454', 'charlespierre26@gmail.com', 'charles', '1234', 0),
+(2, 'DesChamps', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandondeschamps12@hotmail.com', 'brandon', '1234', 0),
+(4, 'Cloutier', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentincloutier33@yahoo.com', 'florentin', '1234', 0),
 (6, 'Joola', 'Antonii', '1265 rue Vidéo', 65, '450-430-8754', 'antoniijoola22@unsafemails.com', 'antonii', '1234', 0),
 (7, 'Gordon', 'Michaël', '123 Rue de Saturne', 20, '450-354-4158', 'michaelgordon33@yahoo.com', 'michael', '1234', 1),
 (8, 'Root', 'Admin', '123 rue de l\'administration', 1, '450-123-1234', 'adminroot@hotmail.com', 'admin', 'root', 1);
