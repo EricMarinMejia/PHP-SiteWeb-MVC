@@ -36,9 +36,9 @@ class ControleurUtilisateurs extends Controleur
     public function utilisateur()
     {
         $id = $id = $this->requete->getParametre("id");
-        $utilisateur = $this->utilisateur->getUtilisateur($id);
+        $utilisateurEntree = $this->utilisateur->getUtilisateur($id);
         $vehicules = $this->utilisateur->getVehiculesUtilisateur($id);
-        $this->genererVue(array('utilisateur' => $utilisateur, 'vehicules' => $vehicules));
+        $this->genererVue(array('utilisateurEntree' => $utilisateurEntree, 'vehicules' => $vehicules));
     }
 
     

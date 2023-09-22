@@ -17,7 +17,7 @@
 
 <!-- Section pour l'info de l'utilisateur liée au véhicule -->
 <!-- tous les véhicules doivent avoir un user liée (1 min et 1 max) -->
-<a href="Utilisateurs/utilisateur/<?= $utilisateurEntree['id'] ?>"><h2 id="titreUtilisateurVehicule">Voir le profil utilisateur #<?= $this->nettoyer($utilisateurEntree['id']) ?></h2></a>
+<a href="Utilisateurs/utilisateur/<?= $utilisateurEntree['id'] ?>"><h2 id="titreUtilisateurVehicule">-> Voir le profil utilisateur #<?= $this->nettoyer($utilisateurEntree['id']) ?>: <?= $this->nettoyer($utilisateurEntree['prenom']) ?> <?= $this->nettoyer($utilisateurEntree['nom']) ?> <-</h2></a>
 <h2 id="titreReparationsVehicule">Voir les réparations de ce véhicule</h2>
     <ul>
         <?php foreach($reparations as $reparation): ?>

@@ -15,6 +15,7 @@
 </article>
 
 <!-- Section pour l'info du véhicule liée à la réparation -->
-<a href="Vehicules/vehicule/<?= $vehicule['id'] ?>"><h2 id="titreVehiculeReparation">Voir le vehicule #<?= $this->nettoyer($vehicule['id']) ?></h2></a>
+<a href="Vehicules/vehicule/<?= $vehicule['id'] ?>"><h2 id="titreVehiculeReparation">-> Voir le vehicule #<?= $this->nettoyer($vehicule['id']) ?>:
+<?= $this->nettoyer($vehicule['marque']) ?> <?= $this->nettoyer($vehicule['modele']) ?> <-</h2></a>
 
 
