@@ -8,7 +8,7 @@
         <hr />
     </header>
 
-    <p><strong>ID du véhicule: </strong><?= $this->nettoyer($reparation['id_vehicule']) ?></p>
+    <p><strong>Véhicule: </strong><?= $this->nettoyer($vehicule['marque']) ?> <?= $this->nettoyer($vehicule['modele']) ?></p>
     <p><strong>Description de la réparation: </strong><?= $this->nettoyer($reparation['description_reparations']) ?></p>
     <p><strong>Montant payé: </strong><?= $this->nettoyer($reparation['montant_paye']) ?>$</p>
     <p><strong>Méchanicien en charge: </strong><?= $this->nettoyer($reparation['mechanicien']) ?></p>

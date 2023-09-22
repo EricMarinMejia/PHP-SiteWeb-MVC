@@ -7,7 +7,6 @@
         <hr />
     </header>
 
-    <p><strong>ID de l'utilisateur: </strong><?= $this->nettoyer($utilisateurEntree['id']) ?></p>
     <p><strong>Nom complet: </strong><?= $this->nettoyer($utilisateurEntree['prenom']) ?> <?= $this->nettoyer($utilisateurEntree['nom']) ?></p>
     <p><strong>Adresse: </strong><?= $this->nettoyer($utilisateurEntree['adresse']) ?></p>
     <p><strong>Âge: </strong><?= $this->nettoyer($utilisateurEntree['age']) ?></p>

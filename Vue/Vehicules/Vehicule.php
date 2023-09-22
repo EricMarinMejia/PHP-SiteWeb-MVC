@@ -7,8 +7,7 @@
         <hr />
     </header>
 
-    <p><strong>ID du véhicule: </strong><?= $this->nettoyer($vehicule['id']) ?></p>
-    <p><strong>ID du propriétaire: </strong><?= $this->nettoyer($vehicule['id_utilisateur']) ?></p>
+    <p><strong>Propriétaire: </strong><?= $this->nettoyer($utilisateurEntree['prenom']) ?> <?= $this->nettoyer($utilisateurEntree['nom']) ?></p>
     <p><strong>Marque: </strong><?= $this->nettoyer($vehicule['marque']) ?></p>
     <p><strong>Modèle: </strong><?= $this->nettoyer($vehicule['modele']) ?></p>
     <p><strong>Plaque: </strong><?= $this->nettoyer($vehicule['plaque']) ?></p>
