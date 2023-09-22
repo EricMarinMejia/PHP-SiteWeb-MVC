@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 21 sep. 2023 à 16:24
+-- Généré le : ven. 22 sep. 2023 à 12:31
 -- Version du serveur : 8.0.31
 -- Version de PHP : 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `reparations_automobiles_v0_0_1`
+-- Base de données : `reparations_automobiles_v0_0_2`
 --
 
 -- --------------------------------------------------------
@@ -64,7 +64,7 @@ CREATE TABLE `utilisateurs` (
   `courriel` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL,
-  `admin` int(1) NOT NULL
+  `admin` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -76,7 +76,8 @@ INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `adresse`, `age`, `telephone`
 (2, 'Myre', 'Brandon', '3208 Rue de Modène\r\n', 19, '450-256-6899', 'brandonmyre12@hotmail.com', 'brandon', '1234', 0),
 (4, 'Toupet', 'Florentin', '122 Rue Jean-De Ronceray', 18, '450-569-4141', 'florentintoupet33@yahoo.com', 'florentin', '1234', 0),
 (6, 'Joola', 'Antonii', '1265 rue Vidéo', 65, '450-430-8754', 'antoniijoola22@unsafemails.com', 'antonii', '1234', 0),
-(7, 'Gordon', 'Michaël', '123 Rue de Saturne', 20, '450-354-4158', 'michaelgordon33@yahoo.com', 'michael', '1234', 1);
+(7, 'Gordon', 'Michaël', '123 Rue de Saturne', 20, '450-354-4158', 'michaelgordon33@yahoo.com', 'michael', '1234', 1),
+(8, 'Root', 'Admin', '123 rue de l\'administration', 1, '450-123-1234', 'adminroot@hotmail.com', 'admin', 'root', 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,7 @@ ALTER TABLE `reparations`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `vehicules`
