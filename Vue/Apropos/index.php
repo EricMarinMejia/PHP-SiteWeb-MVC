@@ -62,6 +62,11 @@ Pour tester, veuillez utiliser le compte -> Login: admin - Mot de passe: root.</
 <br />
 <h3>Diagramme de la base de données</h3>
 <img src="img/Conception.png" />
+<br/>
+<h3>Basé sur modèle</h3>
+<img src="img/Reference.png" />
+<br />
+<a href="https://modelarchive.databases.biz/data_models/car_svc_center/index.html" target="_blank">Cliquer ici pour visiter la page originale</a>
 <br />
 <hr />
 
