@@ -96,7 +96,7 @@ class ControleurAdminreparations extends ControleurAdmin
         $reparation = $this->reparation->getReparation($id);
         $this->genererVue(array('reparation' => $reparation));
     }
-
+    
 
     /**
      * Modifie une réparation
@@ -123,6 +123,14 @@ class ControleurAdminreparations extends ControleurAdmin
         {
             throw new Exception("Date de fin avant date de debut");
         }
+    }
+
+
+    public function retablir()
+    {
+        $id = $this->requete->getParametre("id");
+        $this->reparation->restoreReparation($id);
+        $this->executerAction("index");
     }
 
 }

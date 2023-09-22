@@ -17,10 +17,12 @@
 
 <!-- Section pour l'info de l'utilisateur liée au véhicule -->
 <!-- tous les véhicules doivent avoir un user liée (1 min et 1 max) -->
-<a href="Utilisateurs/utilisateur/<?= $utilisateur['id'] ?>"><h2 id="titreUtilisateurVehicule">Voir le profil utilisateur #<?= $this->nettoyer($utilisateur['id']) ?></h2></a>
+<a href="Utilisateurs/utilisateur/<?= $utilisateurEntree['id'] ?>"><h2 id="titreUtilisateurVehicule">Voir le profil utilisateur #<?= $this->nettoyer($utilisateurEntree['id']) ?></h2></a>
 <h2 id="titreReparationsVehicule">Voir les réparations de ce véhicule</h2>
     <ul>
         <?php foreach($reparations as $reparation): ?>
-            <a href="Reparations/reparation/<?= $reparation['id'] ?>"><li>#<?= $this->nettoyer($reparation['id']) ?>: <?= $this->nettoyer($reparation['date_reparation_debut']) ?> -  <?= $this->nettoyer($reparation['date_reparation_fin']) ?></li></a>
+            <?php if ($reparation['efface'] == '0') : ?>
+                <a href="Reparations/reparation/<?= $reparation['id'] ?>"><li>#<?= $this->nettoyer($reparation['id']) ?>: <?= $this->nettoyer($reparation['date_reparation_debut']) ?> -  <?= $this->nettoyer($reparation['date_reparation_fin']) ?></li></a>
+            <?php endif; ?>
         <?php endforeach ?>
     </ul>

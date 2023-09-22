@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <base href="<?= $racineWeb ?>" >
-        <link rel="stylesheet" href="./Contenu/mystyle.css" />
+        <link rel="stylesheet" href="./Contenu/style.css" />
         <title id="titrePage"><?= $titre ?></title>   <!-- Élément spécifique -->
     </head>
     <body>

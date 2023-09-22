@@ -21,6 +21,8 @@
 <h2 id="titreReparationsVehicule">Voir les réparations de ce véhicule</h2>
     <ul>
         <?php foreach($reparations as $reparation): ?>
-            <a href="Adminreparations/reparation/<?= $reparation['id'] ?>"><li>-> #<?= $this->nettoyer($reparation['id']) ?>: <?= $this->nettoyer($reparation['date_reparation_debut']) ?> -  <?= $this->nettoyer($reparation['date_reparation_fin']) ?> <-</li></a>
+            <?php if ($reparation['efface'] == '0') : ?>
+                <a href="Adminreparations/reparation/<?= $reparation['id'] ?>"><li>-> #<?= $this->nettoyer($reparation['id']) ?>: <?= $this->nettoyer($reparation['date_reparation_debut']) ?> -  <?= $this->nettoyer($reparation['date_reparation_fin']) ?> <-</li></a>
+            <?php endif; ?>
         <?php endforeach ?>
     </ul>

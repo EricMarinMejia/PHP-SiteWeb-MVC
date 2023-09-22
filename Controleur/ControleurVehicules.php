@@ -37,8 +37,8 @@ class ControleurVehicules extends Controleur
         $id = $this->requete->getParametre("id");
         $vehicule = $this->vehicule->getVehicule($id);
         $reparations = $this->vehicule->getReparationsVehicule($id);
-        $utilisateur = $this->utilisateur->getUtilisateur($vehicule['id_utilisateur']);
-        $this->genererVue(array('vehicule' => $vehicule, 'reparations' => $reparations, 'utilisateur' => $utilisateur)); //IL FAUDRA ENVOYER L'UTILISATEUR AUSSI
+        $utilisateurEntree = $this->utilisateur->getUtilisateur($vehicule['id_utilisateur']);
+        $this->genererVue(array('vehicule' => $vehicule, 'reparations' => $reparations, 'utilisateurEntree' => $utilisateurEntree));
     }
 
 }

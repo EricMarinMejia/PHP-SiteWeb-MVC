@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `reparations_automobiles_v0_0_2`
+-- Base de données : `reparations_automobiles_v0_0_3`
 --
 
 -- --------------------------------------------------------
@@ -34,19 +34,20 @@ CREATE TABLE `reparations` (
   `date_reparation_fin` date NOT NULL,
   `description_reparations` text NOT NULL,
   `montant_paye` int NOT NULL,
-  `mechanicien` varchar(255) NOT NULL
+  `mechanicien` varchar(255) NOT NULL,
+  `efface` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `reparations`
 --
 
-INSERT INTO `reparations` (`id`, `id_vehicule`, `date_reparation_debut`, `date_reparation_fin`, `description_reparations`, `montant_paye`, `mechanicien`) VALUES
-(1, 1, '2023-08-01', '2023-08-01', 'Changement de pneu arrière gauche', 100, 'Michel Alvaro'),
-(2, 2, '2023-08-01', '2023-08-01', 'Changement d\'huile', 60, 'Jean Desjardins'),
-(3, 3, '2023-08-04', '2023-08-05', 'Remplacement de pare-brise', 300, 'Michel Alvaro'),
-(4, 3, '2023-09-01', '2023-09-03', 'Réparation complète de valise arrière', 6000, 'Danny Tremblay'),
-(7, 9, '2023-09-14', '2023-09-14', 'Remplacement de vitre côté passager', 100, 'Danny Tremblay');
+INSERT INTO `reparations` (`id`, `id_vehicule`, `date_reparation_debut`, `date_reparation_fin`, `description_reparations`, `montant_paye`, `mechanicien`, `efface`) VALUES
+(1, 1, '2023-08-01', '2023-08-01', 'Changement de pneu arrière gauche', 100, 'Michel Alvaro', 0),
+(2, 2, '2023-08-01', '2023-08-01', 'Changement d\'huile', 60, 'Jean Desjardins', 0),
+(3, 3, '2023-08-04', '2023-08-05', 'Remplacement de pare-brise', 300, 'Michel Alvaro', 0),
+(4, 3, '2023-09-01', '2023-09-03', 'Réparation complète de valise arrière', 6000, 'Danny Tremblay', 0),
+(7, 9, '2023-09-14', '2023-09-14', 'Remplacement de vitre côté passager', 100, 'Danny Tremblay', 0);
 
 -- --------------------------------------------------------
 

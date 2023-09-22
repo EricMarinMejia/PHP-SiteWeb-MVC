@@ -38,7 +38,7 @@ class Reparation extends Modele
     */
     public function setReparation($reparation)
     {
-        $sql = 'INSERT INTO reparations (id_vehicule, date_reparation_debut, date_reparation_fin, description_reparations, montant_paye, mechanicien) VALUES(?, ?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO reparations (id_vehicule, date_reparation_debut, date_reparation_fin, description_reparations, montant_paye, mechanicien, efface) VALUES(?, ?, ?, ?, ?, ?, 0)';
         $reparations = $this->executerRequete($sql, array($reparation['id_vehicule'], $reparation['date_reparation_debut'], $reparation['date_reparation_fin'], $reparation['description_reparations'], $reparation['montant_paye'], $reparation['mechanicien']));
         return $reparations;
     }
@@ -49,9 +49,18 @@ class Reparation extends Modele
      */
     public function deleteReparation($id)
     {
-        $sql = 'DELETE FROM reparations'
+        $sql = 'UPDATE reparations'
+                . ' SET efface = 1'
                 . ' WHERE id=?';
         $result = $this->executerRequete($sql, array($id));
+        return $result;
+    }
+
+    public function restoreReparation($id) {
+        $sql = 'UPDATE reparations'
+                . ' SET efface = 0'
+                . ' WHERE id = ?';
+        $result = $this->executerRequete($sql, [$id]);
         return $result;
     }
 

@@ -20,24 +20,40 @@
     <div class="containerVueGenerale">
         <?php foreach ($reparations as $reparation):
             ?>
-            <article class="articleVueGenerale">
-                <header>
-                    <a href="Adminreparations/reparation/<?= $reparation['id'] ?>">
-                        <h1 class="titreReparation">Réparation #<?= $this->nettoyer($reparation["id"]) ?></h1>
+            <?php if ($reparation['efface'] == '0') : ?>
+                <article class="articleVueGenerale">
+                    <header>
+                        <a href="Adminreparations/reparation/<?= $reparation['id'] ?>">
+                            <h1 class="titreReparation">Réparation #<?= $this->nettoyer($reparation["id"]) ?></h1>
+                        </a>
+                            <h3><?= $this->nettoyer($reparation['description_reparations']) ?></h3>
+                            <time><?= $this->nettoyer($reparation['date_reparation_debut']) ?></time> - <time><?= $this->nettoyer($reparation['date_reparation_fin']) ?></time>
+                    <header>
+                </article>
+                
+                <p>
+                    <a href="Adminreparations/confirmerReparation/<?= $reparation['id'] ?>" >
+                        [Supprimer]
                     </a>
-                        <h3><?= $this->nettoyer($reparation['description_reparations']) ?></h3>
-                        <time><?= $this->nettoyer($reparation['date_reparation_debut']) ?></time> - <time><?= $this->nettoyer($reparation['date_reparation_fin']) ?></time>
-                <header>
-            </article>
-            
-            <p>
-                <a href="Adminreparations/confirmerReparation/<?= $reparation['id'] ?>" >
-                    [Supprimer]
-                </a>
-                <a href="Adminreparations/modifierReparation/<?= $reparation['id'] ?>" >
-                    [Modifier]
-                </a>
-            </p>
+                    <a href="Adminreparations/modifierReparation/<?= $reparation['id'] ?>" >
+                        [Modifier]
+                    </a>
+                </p>
+            <?php else : ?>
+                <article class="articleVueGenerale">
+                    <header>
+                            <h1 id="efface" class="titreReparation">Réparation #<?= $this->nettoyer($reparation["id"]) ?></h1>
+                            <h3 id="efface"><?= $this->nettoyer($reparation['description_reparations']) ?></h3>
+                            <time><?= $this->nettoyer($reparation['date_reparation_debut']) ?></time> - <time><?= $this->nettoyer($reparation['date_reparation_fin']) ?></time>
+                    <header>
+                </article>
+                
+                <p>
+                    <a href="Adminreparations/retablir/<?= $reparation['id'] ?>" >
+                        [Rétablir]
+                    </a>
+                </p>
+            <?php endif; ?>
 
             <hr id="hrArticles"/>
         <?php endforeach; ?>
