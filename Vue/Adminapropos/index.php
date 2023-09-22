@@ -23,8 +23,10 @@
 <p>
 L'application "Gestionnaire de réparations automobiles" permet d'entrer et de gérer des enregistrements de réparations, des véhicules et des utilisateurs. <br />
 La page Réparations présente la liste des réparations des véhicules avec la description et la date. <br />
+Les réparations supprimées deviennent barrées, grises, et inaccessible.<br />
 Elle offre également la possibilité d'ajouter une nouvelle entrée de réparation (seulement par un utilisateur en session). <br />
 La page Réparations permet aussi de modifier ou supprimer une entrée (seulement par un utilisateur en session). <br />
+De plus, il est possible de rétablir une entrée qui à été supprimée (seulement par un utilisateur en session). <br />
 Il est possible ensuite de cliquer sur n'importe quelle entrée et voir tout les détails ainsi qu'un lien vers le véhicule sur lequel la réparation à été faite. <br />
 <br />
 La page Véhicules présente la liste de véhicules enregistrés dans le système en affichant la plaque d'immatriculation, la marque et le modèle. <br />

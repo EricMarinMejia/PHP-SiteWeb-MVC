@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 22 sep. 2023 à 12:31
+-- Généré le : ven. 22 sep. 2023 à 14:32
 -- Version du serveur : 8.0.31
 -- Version de PHP : 7.4.33
 
@@ -35,7 +35,7 @@ CREATE TABLE `reparations` (
   `description_reparations` text NOT NULL,
   `montant_paye` int NOT NULL,
   `mechanicien` varchar(255) NOT NULL,
-  `efface` int(1) NOT NULL
+  `efface` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -47,7 +47,9 @@ INSERT INTO `reparations` (`id`, `id_vehicule`, `date_reparation_debut`, `date_r
 (2, 2, '2023-08-01', '2023-08-01', 'Changement d\'huile', 60, 'Jean Desjardins', 0),
 (3, 3, '2023-08-04', '2023-08-05', 'Remplacement de pare-brise', 300, 'Michel Alvaro', 0),
 (4, 3, '2023-09-01', '2023-09-03', 'Réparation complète de valise arrière', 6000, 'Danny Tremblay', 0),
-(7, 9, '2023-09-14', '2023-09-14', 'Remplacement de vitre côté passager', 100, 'Danny Tremblay', 0);
+(7, 9, '2023-09-14', '2023-09-14', 'Remplacement de vitre côté passager', 120, 'Danny Tremblay', 0),
+(14, 2, '2023-09-22', '2023-09-23', 'Changement d\'huile', 60, 'Hugo Montreuil', 1),
+(15, 1, '2023-09-22', '2023-09-23', 'Mise en place de aileron arrière', 100, 'Danny Tremblay', 1);
 
 -- --------------------------------------------------------
 
@@ -140,7 +142,7 @@ ALTER TABLE `vehicules`
 -- AUTO_INCREMENT pour la table `reparations`
 --
 ALTER TABLE `reparations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
